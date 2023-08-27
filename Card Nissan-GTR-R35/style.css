@@ -1,0 +1,134 @@
+body {
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 80vh;
+    background-color:rgba(149, 208, 213, 0.594);
+    font-family: 'PT Serif', serif;
+}
+
+.card {
+    width: 250px;
+    background: #ffffff;
+    padding: 20px;
+    padding-top: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #41abedd9;
+    font-family: 'PT Serif', serif;
+}
+
+.card:after {
+    content: '';
+    position:absolute;
+    height:350px;
+    width:700px;
+    background: linear-gradient( to left,hsla(135, 11%, 93%, 0.916), #f32828, #f30606ec);
+    top: -0px;
+    left:-100px;
+    transform:rotateZ(90deg);
+    z-index:0;
+}
+
+.card :where(.cabecalho, .descricao, .produto, .rodape,)
+{
+ position: relative;
+ z-index: 2;
+}
+
+.card .cabecalho
+{
+ display: inline-flex;
+ align-items: center;
+ justify-content: space-between;
+ width: 100%;
+ height: 10%;
+ margin: 0;
+}
+
+.card .cabecalho .valor
+{
+ color: hsla(135, 11%, 93%, 0.916);
+ font-size: 1.2rem;
+}
+
+.card .cabecalho img
+{
+ height: 25px;
+ filter: invert(100%);
+}
+
+.card .descricao
+{
+ color: #1c1919;
+ font-size: 0.8rem;
+ text-align: justify;
+ animation: subir 500ms linear;
+ margin: 0;
+}
+
+@keyframes subir
+{
+ from
+ {
+  transform: translateY(30px);
+  opacity:0;
+ }
+}
+
+.card .produto
+{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 10px;
+}
+
+.card .produto img
+{
+ width: 70%;
+ filter: drop-shadow(0 30px 20px #232222ea);
+ animation: flutuar 600ms linear infinite alternate;
+}
+
+@keyframes flutuar
+{
+ from
+ {
+  transform: translateY(0)
+ }
+ to
+ {
+  transform: translateY(5px)
+ }
+}
+
+.card .rodape p 
+{
+    font-size: 0.8rem;
+    text-align: center;
+    align-items: center;
+}
+
+.card .rodape button 
+{
+    all: unset;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 30px;
+    width: 100%;
+    height: 35px;
+    background: #f91e1e;
+    color:#ffffff;
+    margin-top:auto;
+    font-size: 0.9rem;
+    user-select: none;
+}
+
+.card .rodape button:active
+{
+ transform: scale(0.95)
+}
